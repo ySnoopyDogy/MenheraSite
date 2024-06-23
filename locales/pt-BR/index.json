@@ -30,7 +30,7 @@
     "gods": "Deuses"
   },
   "findout": "Descubra o que posso fazer",
-  "findout-description": "Atualmente eu possuo mais de 65 comandos com muitos outros subcomandos! Cada um mais divertido e louco que o outro, veja!",
+  "findout-description": "Eu possuo mais de 90 comandos, um mais divertido e louco que o outro, veja!",
   "category": "Categoria",
   "categories": {
     "actions": "Ações",
@@ -40,8 +40,7 @@
     "fun": "Diversão",
     "fun-description": "Diga alguem que a macetava, veja o nível de calvície dos seus amigos, case e crie trisais com aquele pessoal querido. Não da pra explicar tudo, mas é MUITA coisa!",
     "rpg": "RPG",
-    "rpg-description-off": "Atualmente o meu RPG esta desligado, porém ele pretende voltar e muito melhor do que antes! Mas não se preocupe, um dia ele voltará... Assim como ja voltou outras vezes.",
-    "rpg-description": "Boleham é um mundo e cheio de magia, aqui tu pode ser um entre 12 classes e 8 raças diferentes para se aventurar em dungeons perigosas com PvP e batalhas contra monstros em tempo real!"
+    "rpg-description": "Boleham é um mundo cheio de magia. Viaje pelo mundo buscando inimigos para se aventurar em uma batalha com diferentes possibilidades de ataques!"
   },
   "see-commands": "Ver Comandos",
   "add-me": {

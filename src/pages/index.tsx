@@ -38,7 +38,7 @@ const useCategories = () => {
     {
       name: t('categories.rpg'),
       id: 'roleplay',
-      description: t('categories.rpg-description-off'),
+      description: t('categories.rpg-description'),
       Icon: RiSwordLine,
     },
   ];
