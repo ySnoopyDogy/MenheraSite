@@ -96,7 +96,6 @@ const getDimensions = async (command: Command): Promise<{ height: number; width:
           response.on('data', (chunk) => {
             bytesRead += chunk.length;
             chunks.push(chunk);
-            console.log(bytesRead);
 
             if (bytesRead >= MAX_BYTES_TO_GET_FROM_IMAGE) {
               response.destroy();

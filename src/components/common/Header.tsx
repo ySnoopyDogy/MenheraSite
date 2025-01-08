@@ -41,6 +41,12 @@ export function useNavbarItems(): NavbarItem[] {
       redirect: true,
     },
     {
+      name: t('boleham'),
+      href: '/boleham',
+      icon: HiStar,
+      redirect: true,
+    },
+    {
       name: t('bicho'),
       href: '/bicho',
       icon: FaGhost,
@@ -56,12 +62,6 @@ export function useNavbarItems(): NavbarItem[] {
       name: t('status'),
       href: process.env.NEXT_PUBLIC_STATUSPAGE_URL ?? '/status',
       icon: HiOutlineStatusOnline,
-      redirect: true,
-    },
-    {
-      name: t('legal'),
-      href: '/legal',
-      icon: HiStar,
       redirect: true,
     },
     {
@@ -90,12 +90,12 @@ export function Header(): JSX.Element {
   return (
     <header className='flex justify-between md:justify-center items-center p-5 container mx-auto max-w-7xl'>
       <Link href='/' passHref>
-        <h1 className='font-bold text-md text-white cursor-pointer' data-test='logo'>
+        <h1 className='font-bold text-md text-white cursor-pointer mr-2' data-test='logo'>
           MenheraBot
         </h1>
       </Link>
       <nav className='flex-1 hidden md:flex flex-row-reverse'>
-        <ul className='flex gap-10'>
+        <ul className='flex lg:gap-10 gap-4'>
           {navbarItems.map((item) => (
             <li
               key={item.name}

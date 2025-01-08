@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { WeeklyTopFiltered } from '../services/api/api.types';
 import { fetchWeeklyHunters } from '../services/api/api';
+import { useEffect, useState } from 'react';
 
 const useCategories = () => {
   const { t } = useTranslation('index');
@@ -68,6 +69,20 @@ const HomePage = ({ weekly, nextWeeklyUpdate }: Props): JSX.Element => {
   const { t, i18n } = useTranslation('index');
   const features = useFeatures();
   const categories = useCategories();
+  const [displayArrow, setDisplayArrow] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      window.removeEventListener('scroll', handleScroll);
+      setDisplayArrow(false);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const toWritableUTF = (str: string): string => str.replace(/[^\x00-\xFF]/g, '');
 
@@ -120,10 +135,12 @@ const HomePage = ({ weekly, nextWeeklyUpdate }: Props): JSX.Element => {
               alt='Menhera comendo pipica'
             />
           </div>
-          <IoIosArrowDown
-            className='text-primary bottom animate-bounce absolute hidden md:block inset-x-1/2 bottom-0'
-            size={50}
-          />
+          {displayArrow && (
+            <IoIosArrowDown
+              className='text-primary bottom animate-bounce absolute hidden md:block inset-x-1/2 bottom-0'
+              size={50}
+            />
+          )}
         </section>
         <SectionDivider className='hidden md:flex' />
         <section id='ranking' className='relative  flex flex-row items-center mx-auto max-w-7xl'>

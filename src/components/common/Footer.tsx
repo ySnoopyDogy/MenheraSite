@@ -48,8 +48,8 @@ const useFooter = () => {
       external: false,
     },
     {
-      redirect: '/legal#terms-of-service',
-      name: 'terms',
+      redirect: '/boleham',
+      name: 'boleham',
       external: false,
     },
     {
@@ -63,8 +63,8 @@ const useFooter = () => {
       external: true,
     },
     {
-      redirect: '/legal#privacy',
-      name: 'privacy',
+      redirect: '/legal',
+      name: 'legal',
       external: false,
     },
   ];

@@ -81,7 +81,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 export const getStaticProps: GetStaticProps = async ({ locale, params = {} }) => {
   const page = params.page ?? INITIAL_BICHO_PAGE;
 
-  if (Number(page) < 1 || Number(page) > 99) return { redirect: { destination: '/bicho' } };
+  if (Number(page) < 1) return { redirect: { destination: '/bicho' } };
 
   const games = await getBichoGames(Number(page));
   const users = await getUsers(
