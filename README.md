@@ -49,9 +49,9 @@ Distributed under the GLP-3.0 License. See `LICENSE` for more information.
 
 ## 📧 | Contact
 
-Discord: **Luxanna#5757**
+Discord: **@ysnopydogy**
 
-Twitter: **[@Luxanna_Dev](https://twitter.com/Luxanna_Dev)**
+Twitter: **[@Luxanna_Dev](https://x.com/Luxanna_Dev)**
 
 ---
 
