@@ -2,7 +2,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
 import { HiCheck, HiStar, HiOutlineEmojiHappy } from 'react-icons/hi';
 import { IoIosArrowDown } from 'react-icons/io';
-import { RiSwordLine } from 'react-icons/ri';
+import { GiFarmTractor } from 'react-icons/gi';
 import { FaRegKissWinkHeart } from 'react-icons/fa';
 import { Button } from '../components/common/Button';
 import Image from 'next/image';
@@ -40,7 +40,7 @@ const useCategories = () => {
       name: t('categories.fazendinha'),
       id: 'roleplay',
       description: t('categories.fazendinha-description'),
-      Icon: RiSwordLine,
+      Icon: GiFarmTractor,
     },
   ];
 
