@@ -38,7 +38,7 @@ const useCategories = () => {
     },
     {
       name: t('categories.fazendinha'),
-      id: 'roleplay',
+      id: 'fazendinha',
       description: t('categories.fazendinha-description'),
       Icon: GiFarmTractor,
     },
