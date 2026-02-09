@@ -37,9 +37,9 @@ const useCategories = () => {
       Icon: HiOutlineEmojiHappy,
     },
     {
-      name: t('categories.rpg'),
+      name: t('categories.fazendinha'),
       id: 'roleplay',
-      description: t('categories.rpg-description'),
+      description: t('categories.fazendinha-description'),
       Icon: RiSwordLine,
     },
   ];

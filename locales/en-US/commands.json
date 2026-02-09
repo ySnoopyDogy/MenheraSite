@@ -6,8 +6,9 @@
   "title": "Know my commands",
   "missing-commands-data": "Nooo... My commands could not be loaded! Try again later!",
   "commands": "Commands",
-  "description": "I have more than 70 different commands to amuse you and to make it easier for you, they are divided into categories, which can be seen below  ",
+  "description": "I have more than 80 different commands to amuse you and to make it easier for you, they are divided into categories, which can be seen below  ",
   "categories": {
+    "fazendinha": "Farm",
     "title": "Categories",
     "actions": "Actions",
     "fun": "Fun",

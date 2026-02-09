@@ -33,6 +33,8 @@
   "findout-description": "Eu possuo mais de 90 comandos, um mais divertido e louco que o outro, veja!",
   "category": "Categoria",
   "categories": {
+    "fazendinha": "Fazendinha",
+    "fazendinha-description": "Cuide de sua fazenda no interior. Plante sementes na melhor época, e troque por prêmios.",
     "actions": "Ações",
     "actions-description": "Está pensando em alguém? Quer abraçar aquele seu crush? E o principal, quer \"MAMAR\" alguém? Hehe, aqui tudo isso e mais é possível, com mais de 20 ações diferentes.",
     "economy": "Economia",

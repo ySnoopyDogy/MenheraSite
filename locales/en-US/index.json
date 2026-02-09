@@ -33,6 +33,8 @@
   "findout-description": "I currently have over 65 commands with many more subcommands! Each one more fun and crazy than the last, see!",
   "category": "Category",
   "categories": {
+    "fazendinha": "Farm",
+    "fazendinha-description": "Take care of your farm in the countryside. Plant seeds at the best time, and exchange them for prizes.",
     "actions": "Actions",
     "actions-description": "Are you thinking about someone? Want to hug that crush of yours? And the main thing, do you want to \"LICK\" someone? Hehe, all this is possible here, with more than 20 different actions.",
     "economy": "Economy",

@@ -8,6 +8,7 @@
   "commands": "Comandos",
   "description": "Eu conto com mais de 70 comandos diferentes para te divertir e para facilitar para vocês, eles são divididos por categorias, que podem ser vistas abaixo",
   "categories": {
+    "fazendinha": "Fazendinha",
     "title": "Categorias",
     "actions": "Ações",
     "fun": "Diversão",
