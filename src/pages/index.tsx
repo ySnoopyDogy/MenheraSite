@@ -90,7 +90,7 @@ const HomePage = ({ weekly, nextWeeklyUpdate }: Props): JSX.Element => {
     <Layout page='index'>
       <main>
         <section id='descritpion' className='flex-1 flex p-6 container min-h-fit mx-auto max-w-7xl'>
-          <div className='md:max-w-xl'>
+          <div className='md:max-w-xl mx-auto'>
             <h1 className='text-white mt-6 font-bold text-4xl md:text-5xl'>
               {t('greetings')} <span className='text-primary'>Menhera Bot</span>
             </h1>
@@ -108,8 +108,8 @@ const HomePage = ({ weekly, nextWeeklyUpdate }: Props): JSX.Element => {
                 </li>
               ))}
             </ul>
-            <a href='/invite' target='_blank'>
-              <Button>{t('invite')}</Button>
+            <a className='w-full' href='/invite' target='_blank'>
+              <Button className='w-11/12'>{t('invite')}</Button>
             </a>
           </div>
           <div className='hidden flex-1 lg:flex justify-center items-center gap-4'>
@@ -200,12 +200,14 @@ const HomePage = ({ weekly, nextWeeklyUpdate }: Props): JSX.Element => {
             {t('findout')} <span className='text-primary'>{'>.<'} </span>
           </h2>
           <p className='text-describe font-describe mt-4 md:text-xl'>{t('findout-description')}</p>
-          <div className='my-6 flex gap-10 flex-wrap justify-between'>
+          <div className='my-6 flex gap-10 flex-wrap justify-center lg:justify-between text-center lg:text-left'>
             {categories.map((category) => (
               <div key={category.id} className='max-w-lg'>
-                {<category.Icon color='#975AFF' size={25} />}
-                <h3 className='text-white font-bold text-xl lg:text-2xl my-4'>
-                  {t('category')} <span className='text-primary'>{category.name}</span>
+                <h3 className='text-white font-bold my-4'>
+                  <div className='flex gap-2 justify-center text-3xl lg:text-2xl lg:justify-start'>
+                    {<category.Icon color='#975AFF' size={25} />}
+                    {t('category')} <span className='text-primary'>{category.name}</span>
+                  </div>
                 </h3>
                 <p className='text-describe font-describe text-base mb-6 md:max-w-sm lg:max-w-md'>
                   {category.description}
@@ -218,7 +220,7 @@ const HomePage = ({ weekly, nextWeeklyUpdate }: Props): JSX.Element => {
                   }}
                   passHref
                 >
-                  <Button>{t('see-commands')}</Button>
+                  <Button className='float-right'>{t('see-commands')}</Button>
                 </Link>
               </div>
             ))}
@@ -247,7 +249,7 @@ const HomePage = ({ weekly, nextWeeklyUpdate }: Props): JSX.Element => {
                 {t('add-me.description')}
               </p>
               <a href='/invite' target='_blank'>
-                <Button>{t('add-me.add')}</Button>
+                <Button className='float-right'>{t('add-me.add')}</Button>
               </a>
             </div>
             <Image
