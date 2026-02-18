@@ -41,8 +41,8 @@ export function useNavbarItems(): NavbarItem[] {
       redirect: true,
     },
     {
-      name: t('boleham'),
-      href: '/boleham',
+      name: t('changelog'),
+      href: '/changelog',
       icon: HiStar,
       redirect: true,
     },
