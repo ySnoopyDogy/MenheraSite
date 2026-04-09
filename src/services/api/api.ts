@@ -2,7 +2,11 @@ import axios from 'axios';
 import { BichoGame, Command, DiscordUser, WeeklyHuntersTopDated } from './api.types';
 
 const fetch = async <R>(route: string): Promise<R> => {
-  const res = await axios.get<R>(process.env.NEXT_PUBLIC_API_URL + route);
+  const res = await axios.get<R>(process.env.NEXT_PUBLIC_API_URL + route).catch((err) => {
+    console.error(`Error fetching data for route '${route}': ${err.message ?? err.reason}`);
+    console.error(JSON.stringify(err));
+    throw err;
+  });
 
   return res.data;
 };
