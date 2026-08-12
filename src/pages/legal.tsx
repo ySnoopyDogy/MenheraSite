@@ -53,7 +53,7 @@ const LegalPage = (): JSX.Element => {
           </h1>
           <small className='text-white'>
             {t('last-change', {
-              date: new Date('2022-06-27').toLocaleDateString(i18n.language, {
+              date: new Date('2026-08-12').toLocaleDateString(i18n.language, {
                 dateStyle: 'short',
               }),
             })}
@@ -85,7 +85,6 @@ const LegalPage = (): JSX.Element => {
               <ol className='list-disc'>
                 <li>{t('tos.nsfw')}</li>
                 <li>{t('tos.discrimination')}</li>
-                <li>{t('tos.smurf')}</li>
               </ol>
             </ul>
           </div>
