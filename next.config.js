@@ -12,6 +12,9 @@ module.exports = {
     ],
   },
   i18n,
+  outputFileTracingIncludes: {
+    '**': ['./next-i18next.config.js', './locales/**/*'],
+  },
   rewrites: async () => [
     {
       source: '/sitemap.xml',

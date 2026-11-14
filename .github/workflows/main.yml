@@ -26,7 +26,7 @@ jobs:
           cache: 'yarn'
 
       - name: Restore nextjs build menehera-site from cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
