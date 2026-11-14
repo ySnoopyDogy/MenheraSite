@@ -87,7 +87,6 @@ export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
       locale: locale as string,
       ...(await serverSideTranslations(locale as string, ['boleham', 'header', 'footer'])),
     },
-    revalidate: 86400,
   };
 };
 

@@ -14,6 +14,8 @@ import { WeeklyTopFiltered } from '../services/api/api.types';
 import { fetchWeeklyHunters } from '../services/api/api';
 import { useEffect, useState } from 'react';
 
+const THIRTY_MINUTES_IN_SECONDS = 30 * 60;
+
 const useCategories = () => {
   const { t } = useTranslation('index');
 
@@ -315,7 +317,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
       nextWeeklyUpdate: weeklyHunters.nextUpdate,
       ...(await serverSideTranslations(locale as string, ['index', 'header', 'footer'])),
     },
-    revalidate: 60,
+    revalidate: THIRTY_MINUTES_IN_SECONDS,
   };
 };
 

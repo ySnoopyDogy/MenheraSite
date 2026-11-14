@@ -90,6 +90,8 @@ export const getStaticPaths: GetStaticPaths = () => {
   return { paths: [], fallback: true };
 };
 
+const TWO_DAYS_IN_SECONDS = 3600 * 48;
+
 export const getStaticProps: GetStaticProps<Props> = async ({ locale, params = {} }) => {
   const log = await fetchGithub();
 
@@ -108,7 +110,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ locale, params = {
       currentVersion,
       ...(await serverSideTranslations(locale as string, ['changelog', 'header', 'footer'])),
     },
-    revalidate: 500,
+    revalidate: TWO_DAYS_IN_SECONDS,
   };
 };
 

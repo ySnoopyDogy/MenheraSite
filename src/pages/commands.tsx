@@ -182,6 +182,8 @@ const CommandPage = ({ commands }: Props): JSX.Element => {
   );
 };
 
+const TWO_DAYS_IN_SECONDS = 3600 * 48;
+
 export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
   const commands = await getCommands(locale as string);
 
@@ -191,7 +193,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
       commands,
       ...(await serverSideTranslations(locale as string, ['commands', 'header', 'footer'])),
     },
-    revalidate: 500,
+    revalidate: TWO_DAYS_IN_SECONDS,
   };
 };
 
