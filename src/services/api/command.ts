@@ -1,7 +1,8 @@
 import { fetchCommands } from './api';
 import { Command, Option } from './api.types';
 import https from 'https';
-import sizeOf, { imageSize } from 'image-size';
+import { imageSize } from 'image-size';
+import { imageSizeFromFile } from 'image-size/fromFile';
 
 const MAX_BYTES_TO_GET_FROM_IMAGE = 2372;
 
@@ -77,12 +78,12 @@ const extractSubcommands = (data: Command[], locale: string): Command[] => {
 
 const getDimensions = async (command: Command): Promise<{ height: number; width: number }> => {
   try {
-    const dimensions = sizeOf(
+    const dimensions = await imageSizeFromFile(
       `public/examples/${command.category}/${command.originalName.replaceAll(' ', '_')}.gif`,
     );
 
     return { height: dimensions.height ?? 0, width: dimensions.width ?? 0 };
-  } catch (e) {
+  } catch {
     return new Promise((res) => {
       let bytesRead = 0;
       const chunks: Uint8Array[] = [];

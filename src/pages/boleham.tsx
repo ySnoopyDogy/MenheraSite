@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation, Trans } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
+import { useTranslation, Trans } from 'next-i18next/pages';
 import { SectionDivider } from '../components/common/SectionDivider';
 import Layout from '../components/PageLayout';
 import { FaDiscord } from 'react-icons/fa';

@@ -1,4 +1,4 @@
-import { TFunction } from 'next-i18next';
+import { TFunction } from 'next-i18next/pages';
 import { BichoGame, DiscordUser } from '../services/api/api.types';
 import { optionBetToText } from '../services/bicho';
 import { Avatar } from './Avatar';
@@ -18,7 +18,7 @@ const BichoPlayerCard = ({
       <div className='flex gap-2 items-center mb-4'>
         {user.found && <Avatar src={user.avatar} />}
         <p className='text-white'>
-          {user.found ? user.displayName ?? `@${user.username}` : `ID: ${player.id}`}
+          {user.found ? (user.displayName ?? `@${user.username}`) : `ID: ${player.id}`}
         </p>
       </div>
       <p className='text-white'>

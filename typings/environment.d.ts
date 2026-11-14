@@ -1,3 +1,5 @@
+/// <reference types="gtag.js" />
+
 declare global {
   namespace NodeJS {
     interface ProcessEnv {

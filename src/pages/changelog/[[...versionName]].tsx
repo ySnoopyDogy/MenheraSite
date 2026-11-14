@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
 
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 
 import { fetchGithub } from '../../services/api/api';
 import { ChangelogVersion, parseChangelog } from '../../services/changelogParser';
@@ -30,10 +30,8 @@ const ChangelogVersionPage = ({ currentVersion, versions }: Props): JSX.Element 
     return (
       <div className='my-6 text-white'>
         <div className=' flex-1 border-b-2 border-separate-color mb-6'>
-          <Link href={'#' + type}>
-            <a id={type} className='text-white uppercase font-bold text-2xl'>
-              {t(type)}
-            </a>
+          <Link href={'#' + type} id={type} className='text-white uppercase font-bold text-2xl'>
+            {t(type)}
           </Link>
         </div>
         <ReactMarkdown>{text}</ReactMarkdown>
@@ -48,8 +46,11 @@ const ChangelogVersionPage = ({ currentVersion, versions }: Props): JSX.Element 
           <h2 className='text-white font-bold text-3xl md:text-4xl my-6'>{t('versions')}</h2>
           <ul className='mt-6 overflow-auto h-full max-h-96 w-full'>
             {versions?.map((version) => (
-              <Link key={version.versionName} passHref href={`/changelog/${version.versionName}`}>
-                <li className='border-b-2 border-b-separate-color py-6 px-1 last:border-none'>
+              <li
+                key={version.versionName}
+                className='border-b-2 border-b-separate-color py-6 px-1 last:border-none'
+              >
+                <Link href={`/changelog/${version.versionName}`}>
                   <p
                     className={classNames(
                       'text-white cursor-pointer font-bold hover:text-primary',
@@ -60,8 +61,8 @@ const ChangelogVersionPage = ({ currentVersion, versions }: Props): JSX.Element 
                   >
                     {version.versionName}
                   </p>
-                </li>
-              </Link>
+                </Link>
+              </li>
             ))}
           </ul>
         </nav>
@@ -102,7 +103,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ locale, params = {
   const currentVersion: ChangelogVersion =
     versionName === 'latest'
       ? lastVersion
-      : versions.find((a) => a?.versionName === versionName) ?? lastVersion;
+      : (versions.find((a) => a?.versionName === versionName) ?? lastVersion);
 
   return {
     props: {

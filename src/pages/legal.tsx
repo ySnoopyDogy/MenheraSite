@@ -1,6 +1,6 @@
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { GetStaticProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import Layout from '../components/PageLayout';
 
 const LegalPage = (): JSX.Element => {

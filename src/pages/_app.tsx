@@ -1,4 +1,3 @@
-import 'tailwindcss/tailwind.css';
 import '../styles/global.css';
 
 import { AppProps } from 'next/app';
@@ -7,7 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { appWithTranslation } from 'next-i18next';
+import { appWithTranslation } from 'next-i18next/pages';
 import Script from 'next/script';
 
 const Application = ({ Component, pageProps }: AppProps) => {
@@ -16,7 +15,7 @@ const Application = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       const pageview = (url: string): void => {
-        window.gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
+        gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
           page_path: url,
         });
       };
@@ -52,7 +51,6 @@ const Application = ({ Component, pageProps }: AppProps) => {
         }}
       />
       <Analytics />
-      {/* @ts-expect-error nao entendi o pq */}
       <Component {...pageProps} />
     </>
   );

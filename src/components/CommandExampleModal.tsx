@@ -1,6 +1,6 @@
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import Image from 'next/image';
-import { Dispatch, MutableRefObject, SetStateAction, useEffect, useRef } from 'react';
+import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 import { Command } from '../services/api/api.types';
 
 type CommandExampleProps = {
@@ -15,7 +15,7 @@ type CommandExampleProps = {
 };
 
 const CommandExampleModal = ({ command, setOpen, showing }: CommandExampleProps): JSX.Element => {
-  const ref = useRef() as MutableRefObject<HTMLDivElement>;
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const isOutside = (e: MouseEvent): void => {
@@ -69,7 +69,6 @@ const CommandExampleModal = ({ command, setOpen, showing }: CommandExampleProps)
                   ' ',
                   '_',
                 )}.gif`}
-                layout='intrinsic'
                 width={command.dimensions.width}
                 height={command.dimensions.height}
                 placeholder='blur'

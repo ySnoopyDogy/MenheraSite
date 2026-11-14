@@ -12,7 +12,7 @@ import {
 } from 'react-icons/hi';
 import { FaClipboardList, FaGhost } from 'react-icons/fa';
 
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 import { IconType } from 'react-icons';
 import { useRouter } from 'next/router';
@@ -145,11 +145,9 @@ export function Header(): JSX.Element {
                     className='border-b last:border-none border-border-color py-3 text-white'
                   >
                     {item.redirect ? (
-                      <Link href={item.href}>
-                        <a className='flex'>
-                          {<item.icon color='#975AFF' size={25} className='mr-3' />}
-                          {item.name}
-                        </a>
+                      <Link href={item.href} className='flex'>
+                        {<item.icon color='#975AFF' size={25} className='mr-3' />}
+                        {item.name}
                       </Link>
                     ) : (
                       <span className='flex cursor-pointer' onClick={changeLocale}>

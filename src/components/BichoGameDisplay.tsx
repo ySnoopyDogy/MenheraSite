@@ -1,4 +1,4 @@
-import { useTranslation, Trans } from 'next-i18next';
+import { useTranslation, Trans } from 'next-i18next/pages';
 import { Fragment, useState } from 'react';
 import { BichoGame, DiscordUser } from '../services/api/api.types';
 import { BichoPlayerCard } from './BichoPlayerCard';
@@ -82,14 +82,19 @@ const BichoGamesTable = ({ games, locale, users }: BichoGameDisplayProps): JSX.E
                       </p>
                       <p>
                         {game.players.length > 0 ? (
-                          <Trans i18nKey={'winners-info'} t={t}>
-                            <span className='text-primary'>{{ players: game.players.length }}</span>
-                            pessoas participaram!
-                            <span className='text-primary'>
-                              {{ winners: game.players.filter((a) => a.didWin).length }}
-                            </span>
-                            venceram
-                          </Trans>
+                          <Trans
+                            i18nKey={'winners-info'}
+                            t={t}
+                            values={{
+                              players: game.players.length,
+                              winners: game.players.filter((a) => a.didWin).length,
+                            }}
+                            components={[
+                              <span className='text-primary' key='0' />,
+                              <span className='text-primary' key='1' />,
+                              <span className='text-primary' key='2' />,
+                            ]}
+                          />
                         ) : (
                           t('no-players')
                         )}
@@ -110,7 +115,6 @@ const BichoGamesTable = ({ games, locale, users }: BichoGameDisplayProps): JSX.E
                           <BichoPlayerCard
                             t={t}
                             player={a}
-                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                             user={users.find((b) => b.id === a.id)!}
                             key={`bicho-player-card-${a.id}`}
                           />

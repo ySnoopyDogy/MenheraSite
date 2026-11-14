@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FaDiscord, FaGithub, FaTwitter } from 'react-icons/fa';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 const socialMedia = [
   {

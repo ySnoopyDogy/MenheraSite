@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { ErrorView } from '../components/ErrorView';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import Layout from '../components/PageLayout';
 
 const NotFoundPage = (): JSX.Element => {

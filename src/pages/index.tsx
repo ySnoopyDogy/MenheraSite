@@ -1,4 +1,4 @@
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { GetStaticProps } from 'next';
 import { HiCheck, HiStar, HiOutlineEmojiHappy } from 'react-icons/hi';
 import { IoIosArrowDown } from 'react-icons/io';
@@ -9,7 +9,7 @@ import Image from 'next/image';
 import Layout from '../components/PageLayout';
 import { SectionDivider } from '../components/common/SectionDivider';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { WeeklyTopFiltered } from '../services/api/api.types';
 import { fetchWeeklyHunters } from '../services/api/api';
 import { useEffect, useState } from 'react';
@@ -119,21 +119,18 @@ const HomePage = ({ weekly, nextWeeklyUpdate }: Props): JSX.Element => {
               src='/images/home-section-1.png'
               width={150}
               height={400}
-              layout='intrinsic'
               alt='Menhera comendo pipica'
             />
             <Image
               src='/images/home-section-1.png'
               width={150}
               height={500}
-              layout='intrinsic'
               alt='Menhera comendo pipica'
             />
             <Image
               src='/images/home-section-1.png'
               width={150}
               height={400}
-              layout='intrinsic'
               alt='Menhera comendo pipica'
             />
           </div>
@@ -147,11 +144,7 @@ const HomePage = ({ weekly, nextWeeklyUpdate }: Props): JSX.Element => {
         <SectionDivider className='hidden md:flex' />
         <section id='ranking' className='relative  flex flex-row items-center mx-auto max-w-7xl'>
           <div className='hidden md:block absolute h-3/4 w-56'>
-            <Image
-              src='/images/home-section-2-menhera.png'
-              layout='fill'
-              alt='Menhera de olho em você!'
-            />
+            <Image src='/images/home-section-2-menhera.png' fill alt='Menhera de olho em você!' />
           </div>
           <div className='bg-secondary-bg md:ml-20 px-6 py-8 md:flex gap-3 justify-around items-center flex-1'>
             <div className='max-w-max shrink md:max-w-md'>
@@ -231,13 +224,13 @@ const HomePage = ({ weekly, nextWeeklyUpdate }: Props): JSX.Element => {
         <section className='relative h-full w-full'>
           <Image
             src='/images/home-section-4-bg.png'
-            layout='fill'
+            fill
             alt='Discord'
             className='-z-10 bg-contain sm:block hidden'
           />
           <Image
             src='/images/home-section-4-bg-mobile.png'
-            layout='fill'
+            fill
             alt='Discord'
             className='-z-10 bg-contain sm:hidden block'
           />
@@ -267,8 +260,8 @@ const HomePage = ({ weekly, nextWeeklyUpdate }: Props): JSX.Element => {
           <div className='hidden md:block -mb-3 -z-10'>
             <Image
               src='/images/menhera-piscando.png'
-              width='374'
-              height='390'
+              width={374}
+              height={390}
               alt='Menhera piscando!'
             />
           </div>
@@ -290,7 +283,6 @@ export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
 
   const rawWeekly = weeklyHunters.data.reduce<WeeklyTopFiltered[]>(
     (acc, user) => {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const found = acc.find((item) => item.type === user.hunt_type)!;
       found.users.push(user);
 

@@ -1,10 +1,15 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-require-imports */
 
 const { i18n } = require('./next-i18next.config');
 
 module.exports = {
   images: {
-    domains: ['cdn.discordapp.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.discordapp.com',
+      },
+    ],
   },
   i18n,
   rewrites: async () => [

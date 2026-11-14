@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { GetStaticProps } from 'next';
 import { SectionDivider } from '../components/common/SectionDivider';
 import Layout from '../components/PageLayout';
@@ -27,8 +27,11 @@ const DonatePage = (): JSX.Element => {
               <span className='font-semibold text-green-400'>Pix: </span>
               donate@menherabot.xyz
             </div>
-            <Link href={'https://github.com/sponsors/MenheraBot'} passHref>
-              <a className='font-semibold text-green-400 text-5xl'>GitHub Sponsors</a>
+            <Link
+              href={'https://github.com/sponsors/MenheraBot'}
+              className='font-semibold text-green-400 text-5xl'
+            >
+              GitHub Sponsors
             </Link>
           </div>
         </div>

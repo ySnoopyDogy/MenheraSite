@@ -2,7 +2,7 @@ import { Footer } from './common/Footer';
 import { Seo } from './common/Seo';
 import { Header } from './common/Header';
 import CookieConsent from 'react-cookie-consent';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 type Props = {
   children: React.ReactNode;
@@ -16,7 +16,6 @@ const Layout = ({ children, page }: Props): JSX.Element => {
     <main>
       <Seo page={page} />
       <Header />
-      {/* @ts-expect-error This works as intended  */}
       <CookieConsent
         location='bottom'
         buttonText='Okay'
@@ -28,7 +27,7 @@ const Layout = ({ children, page }: Props): JSX.Element => {
           background: '#9c5ddb',
           borderRadius: '50px',
           width: '300px',
-          heigh: '30px',
+          height: '30px',
         }}
       >
         {t('cookie')}

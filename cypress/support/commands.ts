@@ -3,7 +3,6 @@
 
 declare global {
   namespace Cypress {
-    // eslint-disable-next-line  @typescript-eslint/no-unused-vars
     interface Chainable {
       /**
        * Custom command to get element by data-cy values

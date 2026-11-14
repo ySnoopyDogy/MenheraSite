@@ -2,11 +2,6 @@
 module.exports = {
   important: true,
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
-  variants: {
-    extend: {
-      width: ['focus'],
-    },
-  },
   theme: {
     fontFamily: {
       describe: ['Montserrat', 'Hind', 'Roboto', 'sans-serif'],

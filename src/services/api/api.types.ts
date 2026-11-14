@@ -1,5 +1,3 @@
-import { ISize } from 'image-size/dist/types/interface';
-
 type i18nObj = Record<string, string>;
 
 export interface Choice {
@@ -37,7 +35,7 @@ export interface Command {
   disabled: Disabled;
   category: string;
   cooldown: number;
-  dimensions: ISize;
+  dimensions: { width: number; height: number };
 }
 
 export interface Top {
